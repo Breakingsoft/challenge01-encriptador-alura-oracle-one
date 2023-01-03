@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <title>Challenge 1 Encriptador ALURA ORACLE ONE</title>
+  <link rel="icon" type="image/x-icon" href="./assets/images/logo.svg">
+</head>
+
+<body>
+
+  <header class="header">
+    <img src="./assets/images/logo.svg" alt="Logo Alura">
+  </header>
+
+  <main class="container">
+
+      <div class="input">
+        <textarea placeholder="Ingrese el texto aquí" id="input"></textarea>
+        <div id="info" class="info">
+          <img src="./assets/images/infoicon.svg" alt="logo Información">
+          <p>Solo letras minúsculas y sin acentos</p>
+        </div>
+
+        <div class="cta">
+          <button class="btn_encrypt" onclick="encryptText()">Encriptar</button>
+          <button class="btn_decrypt" onclick="decryptText()">Desencriptar</button>
+        </div>
+      </div>
+
+      <div class="output">
+        <div id="initial_output" class="initial_output">
+          <img src="./assets/images/outputLogoDesktop.svg" alt="Salida Escritorio">
+          <h2>Ningún mensaje fue encontrado</h2>
+          <p>Ingrese el texto que desees encriptar o desencriptar</p>
+        </div>
+
+        <div class="final_output" id="final_output">
+          <p id="text"></p>
+          <div class="tooltip">
+            <button class="btn_copy" onclick="copyText()">
+              <span class="tooltiptext" id="myTooltip">Copiar al portapapeles</span>
+              Copiar</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Copyright 2022. Alexander Solís Brenes ALURA / Oracle ONE.</p>
+    </footer>
+
+  <script src="./js/encrypt_decrypt.js"></script>
+</body>
+
+</html>

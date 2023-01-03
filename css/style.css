@@ -1,0 +1,301 @@
+:root {
+  --darkBlue100: #609ED4;
+  --darkBlue200: #356EA9;
+  --darkBlue300: #0A3871;
+  --darkBlue400: #072B61;
+  --darkBlue500: #052051;
+  --lightBlue100: #F3F5FC;
+  --lightBlue200: #EFF1FA;
+  --lightBlue300: #E9ECF8;
+  --lightBlue400: #AAB2D5;
+  --lightBlue500: #757FB2;
+
+  --gray100: #CED4DA;
+  --gray200: #ADB5BD;
+  --gray300: #868E96;
+  --gray400: #495057;
+  --gray500: #343A40;
+}
+
+body {
+  background-color: var(--lightBlue300);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  width: 100%;
+  min-height: 95vh;
+  flex-wrap: wrap;
+}
+
+header {
+  background-color: #FFFFFF;
+  height: 96px;
+  width: 100%;
+}
+
+header img {
+  width: 2rem;
+  height: 3rem;
+  padding: 24px 16px;
+}
+
+.container {
+  width: 100%;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  margin: 3.5rem 1rem 1rem 1rem;
+}
+
+textarea {
+  background-color: transparent;
+  height: 16rem;
+  border: transparent;
+  resize: none;
+}
+
+textarea,
+textarea::placeholder {
+  font-size: 2rem !important;
+  color: var(--darkBlue300);
+}
+
+.info {
+  display: flex;
+  color: var(--gray400);
+  gap: 0.5rem;
+  font-size: 12px;
+  visibility: hidden;
+}
+
+.info img {
+  width: 1rem;
+}
+
+button {
+  display: flex;
+  height: 67px;
+  padding: 24px;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  border-radius: 24px;
+  justify-content: center;
+  border: solid var(--darkBlue300) 1px;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+  gap: 1.5rem;
+}
+
+.btn_encrypt {
+  background-color: var(--darkBlue300);
+  color: #FFFFFF;
+}
+
+.btn_encrypt:hover {
+  background-color: var(--lightBlue500);
+  color: white;
+}
+
+.btn_decrypt {
+  background-color: transparent;
+  color: var(--darkBlue300);
+}
+
+.btn_decrypt:hover {
+  background-color: var(--darkBlue500);
+  color: #FFFFFF;
+}
+
+.output {
+  display: flex;
+  flex-direction: column;
+  margin: 4rem 1.5rem 2.5rem 1.5rem;
+  padding: 2rem;
+  background: #FFFFFF;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 32px;
+  text-align: center;
+}
+
+.output h2,
+.output p {
+  margin: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.output img {
+  display: none;
+}
+
+.btn_copy {
+  background-color: transparent;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.btn_copy:hover {
+  background-color: var(--darkBlue300);
+  color: #FFFFFF;
+}
+
+.initial_output {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.final_output {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 2rem;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: var(--lightBlue500);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--lightBlue500) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  color: var(--darkBlue300);
+  text-align: left;
+  align-self: flex-end;
+}
+
+@media (min-width:320px) {
+  footer {
+    margin-top: 0;
+  }
+
+  footer > p {
+    font-size: 10px;
+  }  
+}
+
+@media (min-width:768px) {
+  header {
+    padding: 0 2.5rem;
+    height: 10rem;
+    background-color: transparent;
+  }
+
+  header img {
+    padding: 56px 0;
+  }
+
+  main {
+    padding: 0 2.5rem;
+
+  }
+
+  .cta {
+    display: flex;
+    flex-direction: row;
+  }
+
+  button {
+    width: calc((100%-104px)/2);
+  }
+
+  textarea {
+    height: 28rem;
+  }
+
+  footer {
+    width: 100%;
+    text-align: center;
+  }
+
+  footer > p {
+    font-size: 12px;
+  }
+}
+
+@media (min-width:1440px) {
+  .container {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    padding: 0;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  textarea {
+    height: 55vh;
+  }
+
+  .input {
+    display: flex;
+    margin-top: 200px;
+    width: 900px;
+  }
+
+  .output {
+    width: 336px;
+    height: 78vh;
+  }
+
+  .output img {
+    display: flex;
+    width: 336px;
+    height: 304px;
+  }
+
+  footer {
+    margin-top: 30rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (min-width:2560px) {
+  footer {
+    margin-top: 40rem;
+  }
+}
