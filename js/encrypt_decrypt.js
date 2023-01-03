@@ -1,4 +1,6 @@
-const encrypt = (text) =>
+const encrypt = (
+  text // Constante para la encriptación del texto
+) =>
   text
     .replace(/e/g, "enter")
     .replace(/i/g, "imes")
@@ -6,7 +8,9 @@ const encrypt = (text) =>
     .replace(/o/g, "ober")
     .replace(/u/g, "ufat");
 
-const decrypt = (text) =>
+const decrypt = (
+  text // Constante para la desencriptación del texto
+) =>
   text
     .replace(/enter/g, "e")
     .replace(/imes/g, "i")
@@ -15,11 +19,13 @@ const decrypt = (text) =>
     .replace(/ufat/g, "u");
 
 const stringValidate = (text) => {
+  // Validación de texto, no mayúsculas y caracteres especiales
   let regStringValidate = /[A-Z]|[á-ú]|[Á-Ú]|[à-ù]/;
   return regStringValidate.test(text);
 };
 
 function encryptText() {
+  // Función para encriptar
   let texto = document.getElementById("input").value;
   let value = stringValidate(texto);
 
@@ -37,13 +43,14 @@ function encryptText() {
 }
 
 function decryptText() {
+  // Función para desencriptar
   let texto = document.getElementById("input").value;
   let value = stringValidate(texto);
 
   defaultCopy();
 
   if (!value && texto != "") {
-    // condiciones para encriptar texto
+    // Condiciones para encriptar el texto
     let output = decrypt(texto);
     outputConf(output);
     document.getElementById("info").style.visibility = "hidden";
@@ -54,6 +61,8 @@ function decryptText() {
     document.getElementById("info").style.visibility = "visible";
   }
 }
+
+//Funciones para las salidas
 
 function outputConf(text) {
   document.getElementById("initial_output").style.display = "none";
@@ -66,6 +75,8 @@ function defaultOutput() {
   document.getElementById("final_output").style.display = "none";
   document.getElementById("initial_output").style.display = "flex";
 }
+
+// Funciones para copiar el texto
 
 function copyText() {
   try {
